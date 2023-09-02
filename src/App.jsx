@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Clock from './components/Clock'
 import EmployeeForm from './components/EmployeeForm'
+import Employee from './components/Employee'
 import './App.css'
 
 function App() {
@@ -9,7 +10,10 @@ function App() {
   return (
     <>
      <Clock/>
-    <EmployeeForm/>
+    <EmployeeForm/> 
+    <Employee/>
+    
+
     </>
   )
 }
