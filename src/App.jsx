@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import Clock from './components/Clock'
 import EmployeeForm from './components/EmployeeForm'
-import Employee from './components/Employee'
 import './App.css'
+import EmployeeList from './components/EmployeeList'
 
 function App() {
   const [employees, setEmployees] = useState([
@@ -30,15 +30,8 @@ function App() {
       <EmployeeForm  /> 
 
       {/* TODO: Separar la lista de empleados en un componente llamdado EmployeeList.jsx el cual recibirá una propiedad llamada employees en la cual se le pasará el estado employees. */}
-      
-      {employees.map((employee, index) => {
-        return <Employee
-          key={index}
-          name={employee.name}
-          discount={employee.discount}
-          salary={employee.salary}
-        />
-      })}
+
+      <EmployeeList employees={employees} />
     </>
   )
 }
