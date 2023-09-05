@@ -24,7 +24,15 @@ function App() {
   ])
 
   const handleAddEmployee = (form) => {
-    console.log('Estoy agregando un nuevo empleado...', form)
+    // console.log('Estoy agregando un nuevo empleado...', form)
+    const newEmployee = {
+      id: crypto.randomUUID(),
+      name: form.employeeName,
+      discount: form.discount,
+      salary: form.salary
+    }
+    console.log(newEmployee)
+    setEmployees([ ...employees, newEmployee ])
   }
 
   return (

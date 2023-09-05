@@ -30,6 +30,12 @@ const EmployeeForm = ({ onAddEmployee }) => {
       console.log(form.employeeName, form.discount, form.salary)
       
       onAddEmployee(form)
+
+      setForm({
+        employeeName: '',
+        discount: 0,
+        salary: 0
+      })
     };
 
   return (

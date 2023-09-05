@@ -5,7 +5,7 @@ const EmployeeList = ({ employees }) => {
     <>
       {employees.map((employee, index) => {
         return <Employee
-          key={index}
+          key={employee.id}
           name={employee.name}
           discount={employee.discount}
           salary={employee.salary}
