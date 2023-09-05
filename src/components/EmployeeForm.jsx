@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 
-const EmployeeForm = () => {
-    // const[employeeName,setEmployeeName]=useState("")
-    // const[discount,setDiscount]=useState("")
-    // const[salary,setSalary]=useState("")
-
+const EmployeeForm = (props) => {
     const [form, setForm] = useState({
       employeeName: '',
       discount: 0,
@@ -16,52 +12,31 @@ const EmployeeForm = () => {
       const name = input.name
       const value = input.value
 
-      setForm({
-        ...form,
-        [name]: value
-      })
+      setForm({ ...form, [name]: value })
     }
 
-    // const handleChangeEmployeeName = (event) => {
-    //   const input = event.target
-    //   const value = input.value
-    //   setEmployeeName(value)
-    // }
-
-    // const handleChangeDiscount = (event) => {
-    //   const input = event.target
-    //   const value = input.value
-    //   setDiscount(value)
-    // }
-
-    // const handleChangeSalary = (event) => {
-    //   const input = event.target
-    //   const value = input.value
-    //   setSalary(value)
-    // }
-
     const handleSubmit =(event)=>{
-     event.preventDefault();
-     if(!form.employeeName || !form.discount || !form.salary){
-        alert("verifica los datos ingresados");
-        return;
-     }else if (form.discount > 100 || form.discount <0){
-        const discountValidate=
-        form.discount < 0 
-        ? alert("el descuento no puede ser menor a 0")
-        : alert("el descuento no debe ser mayor a 100");
-        return discountValidate
-     }
-
+      event.preventDefault();
+      if(!form.employeeName || !form.discount || !form.salary){
+          alert("verifica los datos ingresados");
+          return;
+      }else if (form.discount > 100 || form.discount <0){
+          const discountValidate=
+          form.discount < 0 
+          ? alert("el descuento no puede ser menor a 0")
+          : alert("el descuento no debe ser mayor a 100");
+          return discountValidate
+      }
+      console.log(form.employeeName, form.discount, form.salary)
+      
     };
-
 
   return (
     <div>
       <form onSubmit={handleSubmit}>
         <label htmlFor="">
           Nombre del empleado
-          <input type="text" name="employeeName" value={form.employeeName} onChange={handleChange}/>
+          <input type="tesxt" name="employeeName" value={form.employeeName} onChange={handleChange}/>
         </label>
         <br />
         <label htmlFor="">

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Employee = ({id,name,discount,salary}) => {
+const Employee = ({ id, name, discount, salary = 0 }) => {
   const calculateDiscountSalary = (salary, discount) => {
     return salary - (salary * discount) / 100;
   };

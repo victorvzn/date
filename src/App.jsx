@@ -5,13 +5,36 @@ import Employee from './components/Employee'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [employees, setEmployees] = useState([
+    {
+      name:"Victor",
+      discount: 30,
+      salary: 3600
+    },
+    {
+      name:"Claudia",
+      discount: 10,
+      salary: 5000
+    }
+  ])
 
   return (
     <>
-     <Clock/>
-    <EmployeeForm/> 
-    <Employee/>
+      <Clock/>
+    
+      <EmployeeForm  /> 
+      
+      <Employee
+        name="Victor"
+        discount={30}
+        salary={3600}
+      />
+
+      <Employee
+        name="Claudia"
+        discount={10}
+        salary={5000}
+      />
     
 
     </>
