@@ -28,6 +28,8 @@ function App() {
       <Clock/>
     
       <EmployeeForm  /> 
+
+      {/* TODO: Separar la lista de empleados en un componente llamdado EmployeeList.jsx el cual recibirá una propiedad llamada employees en la cual se le pasará el estado employees. */}
       
       {employees.map((employee, index) => {
         return <Employee
@@ -37,10 +39,6 @@ function App() {
           salary={employee.salary}
         />
       })}
-      
-      
-      
-
     </>
   )
 }
