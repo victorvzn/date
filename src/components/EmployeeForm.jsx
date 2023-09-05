@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const EmployeeForm = (props) => {
+const EmployeeForm = ({ onAddEmployee }) => {
     const [form, setForm] = useState({
       employeeName: '',
       discount: 0,
@@ -29,6 +29,7 @@ const EmployeeForm = (props) => {
       }
       console.log(form.employeeName, form.discount, form.salary)
       
+      onAddEmployee(form)
     };
 
   return (

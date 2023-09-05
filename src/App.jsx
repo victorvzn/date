@@ -23,11 +23,16 @@ function App() {
     }
   ])
 
+  const handleAddEmployee = (form) => {
+    console.log('Estoy agregando un nuevo empleado...', form)
+  }
+
   return (
     <>
       <Clock/>
     
-      <EmployeeForm  /> 
+      <EmployeeForm
+        onAddEmployee={handleAddEmployee} /> 
 
       {/* TODO: Separar la lista de empleados en un componente llamdado EmployeeList.jsx el cual recibirá una propiedad llamada employees en la cual se le pasará el estado employees. */}
 
