@@ -5,23 +5,16 @@ import './App.css'
 import EmployeeList from './components/EmployeeList'
 
 function App() {
-  const [employees, setEmployees] = useState([
-    {
-      name:"Victor",
-      discount: 30,
-      salary: 3600
-    },
-    {
-      name:"Claudia",
-      discount: 10,
-      salary: 5000
-    },
-    {
-      name: "Mariana",
-      discount: 5,
-      salary: 11000
+  const [employees, setEmployees] = useState(
+    () => {
+      const savedEmployees = localStorage.getItem('employees')
+      if (savedEmployees) {
+        return JSON.parse(savedEmployees)
+      } else {
+        return []
+      }
     }
-  ])
+  )
 
   const handleAddEmployee = (form) => {
     // console.log('Estoy agregando un nuevo empleado...', form)
@@ -33,6 +26,8 @@ function App() {
     }
     console.log(newEmployee)
     setEmployees([ ...employees, newEmployee ])
+
+    localStorage.setItem('employees', JSON.stringify([ ...employees, newEmployee ]))
   }
 
   return (
