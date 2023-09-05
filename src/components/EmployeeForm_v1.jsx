@@ -1,15 +1,9 @@
 import React, { useState } from "react";
 
 const EmployeeForm = () => {
-    // const[employeeName,setEmployeeName]=useState("")
-    // const[discount,setDiscount]=useState("")
-    // const[salary,setSalary]=useState("")
-
-    const [form, setForm] = useState({
-      employeeName: '',
-      discount: 0,
-      salary: 0
-    })
+    const[employeeName,setEmployeeName]=useState("")
+    const[discount,setDiscount]=useState("")
+    const[salary,setSalary]=useState("")
 
     const handleChangeEmployeeName = (event) => {
       const input = event.target
