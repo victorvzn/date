@@ -15,6 +15,11 @@ function App() {
       name:"Claudia",
       discount: 10,
       salary: 5000
+    },
+    {
+      name: "Mariana",
+      discount: 5,
+      salary: 11000
     }
   ])
 
@@ -24,18 +29,17 @@ function App() {
     
       <EmployeeForm  /> 
       
-      <Employee
-        name="Victor"
-        discount={30}
-        salary={3600}
-      />
-
-      <Employee
-        name="Claudia"
-        discount={10}
-        salary={5000}
-      />
-    
+      {employees.map((employee, index) => {
+        return <Employee
+          key={index}
+          name={employee.name}
+          discount={employee.discount}
+          salary={employee.salary}
+        />
+      })}
+      
+      
+      
 
     </>
   )
