@@ -30,6 +30,15 @@ function App() {
     localStorage.setItem('employees', JSON.stringify([ ...employees, newEmployee ]))
   }
 
+  const handleDeleteEmployee = (id) => {
+    console.log('handleDeleteEmployee', id)
+    const updatedEmployees = employees.filter(employee => employee.id !== id)
+
+    setEmployees(updatedEmployees)
+
+    localStorage.setItem('employees', JSON.stringify(updatedEmployees))
+  }
+
   return (
     <>
       <Clock/>
@@ -39,7 +48,7 @@ function App() {
 
       {/* TODO: Separar la lista de empleados en un componente llamdado EmployeeList.jsx el cual recibirá una propiedad llamada employees en la cual se le pasará el estado employees. */}
 
-      <EmployeeList employees={employees} />
+      <EmployeeList employees={employees} onDeleteEmployee={handleDeleteEmployee} />
     </>
   )
 }
