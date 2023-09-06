@@ -1,6 +1,7 @@
 import { Button, Card, CardActions, CardContent, Typography } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
 import React from "react";
+import { formatNumber } from "../utils";
 
 const Employee = ({ id, name, discount, salary = 0, onRemoveEmployee }) => {
   const calculateDiscountSalary = (salary, discount) => {
@@ -21,10 +22,10 @@ const Employee = ({ id, name, discount, salary = 0, onRemoveEmployee }) => {
           {name}({discount}%)
         </Typography>
         <Typography variant="subtitle2">
-          Salario original: {salary} nuevos soles
+          Salario original: {formatNumber(salary)} nuevos soles
         </Typography>
         <Typography variant="subtitle2">
-          Salario con descuento: {discountSalary} nuevos soles
+          Salario con descuento: {formatNumber(discountSalary)} nuevos soles
         </Typography>
       </CardContent>
       <CardActions>
