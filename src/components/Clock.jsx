@@ -18,11 +18,11 @@ const Clock = () => {
           {time.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit',second:'2-digit'})}
         </Typography>
       </Paper>
-      <div>
+      <Typography variant="subtitle1" sx={{ textAlign: 'center' }}>
         {time.toLocaleDateString([],{
             weekday:'long',year:'numeric',month:'long',day:'numeric'
         })}
-      </div>
+      </Typography>
     </div>
   );
 };

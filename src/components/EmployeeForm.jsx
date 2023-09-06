@@ -1,3 +1,4 @@
+import { Button, TextField } from "@mui/material";
 import React, { useState } from "react";
 
 const EmployeeForm = ({ onAddEmployee }) => {
@@ -39,27 +40,38 @@ const EmployeeForm = ({ onAddEmployee }) => {
     };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="">
-          Nombre del empleado
-          <input type="tesxt" name="employeeName" value={form.employeeName} onChange={handleChange}/>
-        </label>
-        <br />
-        <label htmlFor="">
-         Descuento
-          <input type="text" name="discount" value={form.discount} onChange={handleChange} />
-        </label>
-         <br />
-        <label htmlFor="">
-         salario
-          <input type="text" name="salary" value={form.salary} onChange={handleChange} />
-        </label>
-
-        <br />
-        <button>Agregar Empleado</button>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit} style={{ marginTop: '1rem' }}>
+      <TextField
+        label='Nombre del empleado'
+        name="employeeName"
+        fullWidth
+        margin="dense"
+        value={form.employeeName}
+        onChange={handleChange}
+      />
+      <TextField
+        label='Descuento'
+        name="discount"
+        fullWidth
+        margin="dense"
+        value={form.discount}
+        onChange={handleChange}
+      />
+      <TextField
+        label='Salario'
+        name="salary"
+        fullWidth
+        margin="dense"
+        value={form.salary}
+        onChange={handleChange}
+      />
+      <Button
+        variant="contained"
+        sx={{ width: '100%', mt: 2 }}
+      >
+        Agregar Empleado
+      </Button>
+    </form>
   );
 };
 
