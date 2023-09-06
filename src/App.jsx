@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import Clock from './components/Clock'
 import EmployeeForm from './components/EmployeeForm'
-import './App.css'
 import EmployeeList from './components/EmployeeList'
+
+import { Container, Grid } from '@mui/material'
 
 function App() {
   const [employees, setEmployees] = useState(
@@ -40,16 +41,24 @@ function App() {
   }
 
   return (
-    <>
-      <Clock/>
-    
-      <EmployeeForm
-        onAddEmployee={handleAddEmployee} /> 
+    <Container>
+      <Grid container spacing={3}>
+        <Grid xs={4} sx={{ boxShadow: 1 }}>
+          <Clock/>
+        
+          <EmployeeForm
+            onAddEmployee={handleAddEmployee} /> 
+        </Grid>
+        <Grid xs={8} sx={{ boxShadow: 1 }}>
+          {/* TODO: Separar la lista de empleados en un componente llamdado EmployeeList.jsx el cual recibirá una propiedad llamada employees en la cual se le pasará el estado employees. */}
 
-      {/* TODO: Separar la lista de empleados en un componente llamdado EmployeeList.jsx el cual recibirá una propiedad llamada employees en la cual se le pasará el estado employees. */}
-
-      <EmployeeList employees={employees} onDeleteEmployee={handleDeleteEmployee} />
-    </>
+          <EmployeeList
+            employees={employees}
+            onDeleteEmployee={handleDeleteEmployee}
+          />
+        </Grid>
+      </Grid>
+    </Container>
   )
 }
 
