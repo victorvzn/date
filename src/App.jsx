@@ -57,7 +57,7 @@ function App() {
           </Paper>
         </Grid>
         <Grid item xs={8}>
-          <Paper elevation={3} sx={{ p: 6 }}>
+          <Paper elevation={3} sx={{ p: 6, minHeight: '29.3rem' }}>
             {/* TODO: Separar la lista de empleados en un componente llamdado EmployeeList.jsx el cual recibirá una propiedad llamada employees en la cual se le pasará el estado employees. */}
 
             <EmployeeList
