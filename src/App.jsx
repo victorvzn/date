@@ -3,7 +3,7 @@ import Clock from './components/Clock'
 import EmployeeForm from './components/EmployeeForm'
 import EmployeeList from './components/EmployeeList'
 
-import { Container, Grid, Paper } from '@mui/material'
+import { Container, Grid, Paper, Typography } from '@mui/material'
 
 function App() {
   const [employees, setEmployees] = useState(
@@ -45,6 +45,10 @@ function App() {
       <Grid container spacing={2} sx={{ mt: 3 }}>
         <Grid item xs={4}>
           <Paper elevation={3} sx={{ p: 6 }}>
+            <Typography variant="h4" gutterBottom sx={{ textAlign: 'center' }}>
+              Calculando mis descuentos
+            </Typography>
+          
             <Clock/>
           
             <EmployeeForm
