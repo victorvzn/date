@@ -1,3 +1,5 @@
+import { Button, Card, CardActions, CardContent, Typography } from "@mui/material";
+import DeleteIcon from '@mui/icons-material/Delete';
 import React from "react";
 
 const Employee = ({ id, name, discount, salary = 0, onRemoveEmployee }) => {
@@ -13,14 +15,28 @@ const Employee = ({ id, name, discount, salary = 0, onRemoveEmployee }) => {
   }
 
   return (
-    <div>
-      <h3>
-        {name}({discount}%)
-      </h3>
-      <p>salario original : {salary} nuevos soles</p>
-      <p>Salario con descuento:{discountSalary} nuevos soles</p>
-      <button onClick={() => handleRemoveEmployee(id)}>Eliminar Empleado</button>
-    </div>
+    <Card sx={{ mb: 2 }}>
+      <CardContent>
+        <Typography variant="h6" gutterBottom>
+          {name}({discount}%)
+        </Typography>
+        <Typography variant="subtitle2">
+          Salario original: {salary} nuevos soles
+        </Typography>
+        <Typography variant="subtitle2">
+          Salario con descuento: {discountSalary} nuevos soles
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button
+          variant="outlined"
+          color="error"
+          onClick={() => handleRemoveEmployee(id)}
+        >
+          <DeleteIcon />
+        </Button>
+      </CardActions>
+    </Card>
   );
 };
 

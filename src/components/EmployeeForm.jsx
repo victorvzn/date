@@ -54,6 +54,7 @@ const EmployeeForm = ({ onAddEmployee }) => {
         name="discount"
         fullWidth
         margin="dense"
+        type="number"
         value={form.discount}
         onChange={handleChange}
       />
@@ -62,11 +63,13 @@ const EmployeeForm = ({ onAddEmployee }) => {
         name="salary"
         fullWidth
         margin="dense"
+        type="number"
         value={form.salary}
         onChange={handleChange}
       />
       <Button
         variant="contained"
+        type="submit"
         sx={{ width: '100%', mt: 2 }}
       >
         Agregar Empleado
